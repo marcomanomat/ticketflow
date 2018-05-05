@@ -1,0 +1,23 @@
+<h1>New Ticket</h1>
+
+
+<%= form_with scope: :ticket, url: tickets_path, local: true do |form| %>
+  <p>
+    <%= form.label :number %><br>
+    <%= form.number_field :number %>
+  </p>
+ 
+  <p>
+    <%= form.label :status %><br>
+    <%= form.text_area :status %>
+  </p>
+
+    <p>
+    <%= form.label :url %><br>
+    <%= form.text_field :url %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
