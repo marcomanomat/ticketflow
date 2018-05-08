@@ -500,3 +500,900 @@ Processing by TicketsController#show as HTML
 Completed 200 OK in 22ms (Views: 17.3ms | ActiveRecord: 0.2ms)
 
 
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tickets"[0m
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" ORDER BY "tickets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" ORDER BY "tickets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTicket Load (0.1ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" ORDER BY "tickets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" ORDER BY "tickets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/tickets/1" for 127.0.0.1 at 2018-05-05 18:13:30 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/marcomanomat/.rvm/gems/ruby-2.2.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:4
+  Rendering tickets/show.html.erb within layouts/application
+  Rendered tickets/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 217ms (Views: 198.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/tickets" for 127.0.0.1 at 2018-05-05 18:14:19 -0400
+Processing by TicketsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HfaYm79PNF7EnrvUM2OLbb6FGDCjukC1RbDIVRqjwQYwSUJETFIJLlgvijDAVc7NwzRZ0BGOqD+Ph7QMFE0Ivw==", "ticket"=>{"number"=>"1", "status"=>"Open", "url"=>"www.google.com"}, "commit"=>"Save Ticket"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tickets_controller.rb:15
+  [1m[36mTicket Create (0.8ms)[0m  [1m[32mINSERT INTO "tickets" ("number", "status", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["number", 1], ["status", "Open"], ["url", "www.google.com"], ["created_at", "2018-05-05 22:14:19.857957"], ["updated_at", "2018-05-05 22:14:19.857957"]]
+  ↳ app/controllers/tickets_controller.rb:15
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tickets_controller.rb:15
+Redirected to http://localhost:3000/tickets/2
+Completed 302 Found in 5ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/tickets/2" for 127.0.0.1 at 2018-05-05 18:14:19 -0400
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:4
+  Rendering tickets/show.html.erb within layouts/application
+  Rendered tickets/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 20ms (Views: 17.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tickets/1" for 127.0.0.1 at 2018-05-05 18:14:27 -0400
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTicket Load (0.1ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:4
+  Rendering tickets/show.html.erb within layouts/application
+  Rendered tickets/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 19ms (Views: 16.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/tickets/2" for 127.0.0.1 at 2018-05-05 18:14:31 -0400
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTicket Load (0.1ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:4
+  Rendering tickets/show.html.erb within layouts/application
+  Rendered tickets/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 22ms (Views: 18.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/tickets/3" for 127.0.0.1 at 2018-05-05 18:14:35 -0400
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTicket Load (0.1ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:4
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Ticket with 'id'=3):
+  
+app/controllers/tickets_controller.rb:4:in `show'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/marcomanomat/.rvm/gems/ruby-2.2.4/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/marcomanomat/.rvm/gems/ruby-2.2.4/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/marcomanomat/.rvm/gems/ruby-2.2.4/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/marcomanomat/.rvm/gems/ruby-2.2.4/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/marcomanomat/.rvm/gems/ruby-2.2.4/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/marcomanomat/.rvm/gems/ruby-2.2.4/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateMembers (20180505230933)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "members" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180505230933_create_members.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180505230933"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateTickets (20180505231217)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "tickets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "number" integer, "status" text, "link" text, "url" text, "member_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_56af1c6c67"
+FOREIGN KEY ("member_id")
+  REFERENCES "members" ("id")
+)[0m
+  ↳ db/migrate/20180505231217_create_tickets.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_tickets_on_member_id" ON "tickets" ("member_id")[0m
+  ↳ db/migrate/20180505231217_create_tickets.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180505231217"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-05 23:12:51.273795"], ["updated_at", "2018-05-05 23:12:51.273795"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/partners/new" for 127.0.0.1 at 2018-05-05 19:35:37 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/marcomanomat/.rvm/gems/ruby-2.2.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (uninitialized constant PartnersController):
+  
+bootsnap (1.3.0) lib/bootsnap/load_path_cache/core_ext/active_support.rb:53:in `block in load_missing_constant'
+bootsnap (1.3.0) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.3.0) lib/bootsnap/load_path_cache/core_ext/active_support.rb:53:in `rescue in load_missing_constant'
+bootsnap (1.3.0) lib/bootsnap/load_path_cache/core_ext/active_support.rb:43:in `load_missing_constant'
+activesupport (5.2.0) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.0) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.0) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.0) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.0) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.0) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.0) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.1) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.1) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.1) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `call'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/members/new" for 127.0.0.1 at 2018-05-05 19:37:41 -0400
+Processing by MembersController#new as HTML
+  Rendering members/new.html.erb within layouts/application
+  Rendered members/new.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 259ms (Views: 256.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/members" for 127.0.0.1 at 2018-05-05 19:38:00 -0400
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I5e3Mgr/DwEXc+TLU7ihK7+3JyRGkdywQ9O6o/dMnosOKG3t+eIycYvC1S+gjuSLwgZmxPSlNDqJ5Mb6+aJXMg==", "member"=>{"name"=>"Marco Manomat"}, "commit"=>"Save Member"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/members_controller.rb:19
+  [1m[36mMember Create (1.5ms)[0m  [1m[32mINSERT INTO "members" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Marco Manomat"], ["created_at", "2018-05-05 23:38:00.333390"], ["updated_at", "2018-05-05 23:38:00.333390"]]
+  ↳ app/controllers/members_controller.rb:19
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/members_controller.rb:19
+Redirected to http://localhost:3000/members/1
+Completed 302 Found in 13ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/members/1" for 127.0.0.1 at 2018-05-05 19:38:00 -0400
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:4
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 25ms (Views: 19.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/members/1" for 127.0.0.1 at 2018-05-05 19:42:04 -0400
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:4
+  [1m[36mCACHE Member Load (0.0ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:5
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 28ms (Views: 19.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/members/1" for 127.0.0.1 at 2018-05-05 19:42:57 -0400
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:4
+  [1m[36mCACHE Member Load (0.0ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:5
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 44ms (Views: 41.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/members/1" for 127.0.0.1 at 2018-05-05 19:43:53 -0400
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:4
+  [1m[36mCACHE Member Load (0.0ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:5
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 24ms (Views: 21.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/ticket/1" for 127.0.0.1 at 2018-05-05 19:46:02 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/ticket/1"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.1) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.1) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.1) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `call'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/ticket/new" for 127.0.0.1 at 2018-05-05 19:46:06 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/ticket/new"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.1) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.1) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.1) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `call'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/tickets/new" for 127.0.0.1 at 2018-05-05 19:46:15 -0400
+Processing by TicketsController#new as HTML
+  Rendering tickets/new.html.erb within layouts/application
+  Rendered tickets/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 34ms (Views: 30.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/members/index" for 127.0.0.1 at 2018-05-06 10:09:56 -0400
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:4
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Member with 'id'=index):
+  
+app/controllers/members_controller.rb:4:in `show'
+Started GET "/members/" for 127.0.0.1 at 2018-05-06 10:11:38 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/marcomanomat/.rvm/gems/ruby-2.2.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by MembersController#index as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant MembersController::Members):
+  
+app/controllers/members_controller.rb:12:in `index'
+Started GET "/members/" for 127.0.0.1 at 2018-05-06 10:12:28 -0400
+Processing by MembersController#index as HTML
+  Rendering members/index.html.erb within layouts/application
+  Rendered members/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/marcomanomat/Desktop/ticketflow/app/views/members/index.html.erb:8: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/marcomanomat/Desktop/ticketflow/app/views/members/index.html.erb:10: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/members/index.html.erb:8: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/members/index.html.erb:10: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/members/" for 127.0.0.1 at 2018-05-06 10:12:58 -0400
+Processing by MembersController#index as HTML
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  ↳ app/views/members/index.html.erb:3
+  Rendered members/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 175ms (Views: 172.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/members/" for 127.0.0.1 at 2018-05-06 10:14:10 -0400
+Processing by MembersController#index as HTML
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  ↳ app/views/members/index.html.erb:5
+  Rendered members/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 21ms (Views: 18.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/members/" for 127.0.0.1 at 2018-05-06 10:19:17 -0400
+Processing by MembersController#index as HTML
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  ↳ app/views/members/index.html.erb:5
+  Rendered members/index.html.erb within layouts/application (109.6ms)
+Completed 500 Internal Server Error in 115ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x007fe34039a000>:0x007fe344c9d888>):
+    11:  <p>Not here? Click here to create</p>
+    12: 
+    13: 
+    14:   <%= f.collection_select :member_id, Member.order(:name),:id,:name, include_blank: true %>
+  
+app/views/members/index.html.erb:14:in `_app_views_members_index_html_erb___3013783007513763372_70307044192580'
+Started GET "/members/" for 127.0.0.1 at 2018-05-06 10:20:39 -0400
+Processing by MembersController#index as HTML
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  ↳ app/views/members/index.html.erb:5
+  Rendered members/index.html.erb within layouts/application (94.9ms)
+Completed 500 Internal Server Error in 101ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x007fe34039a000>:0x007fe3406eb560>):
+    11:  <p>Not here? Click here to create</p>
+    12: 
+    13: 
+    14:   <%= f.collection_select :member_id, @members.order(:name),:id,:name, include_blank: true %>
+  
+app/views/members/index.html.erb:14:in `_app_views_members_index_html_erb___3013783007513763372_70307007678220'
+Started GET "/members/" for 127.0.0.1 at 2018-05-06 10:23:42 -0400
+Processing by MembersController#index as HTML
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  ↳ app/views/members/index.html.erb:5
+  Rendered members/index.html.erb within layouts/application (8.4ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::ProductType):
+    17: 
+    18: 	<div class="fixture-buttons">
+    19: 
+    20:   	<%= collection_radio_buttons(:product_type, :product_type_ids, ProductType.all.order('name ASC'), :id, :name) %>
+    21: 	</div>
+    22: 	
+    23: 	<div class="filter-buttons">
+  
+app/views/members/index.html.erb:20:in `_app_views_members_index_html_erb___3013783007513763372_70307025166680'
+Started GET "/members/" for 127.0.0.1 at 2018-05-06 10:24:33 -0400
+Processing by MembersController#index as HTML
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  ↳ app/views/members/index.html.erb:5
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:20
+  Rendered members/index.html.erb within layouts/application (180.8ms)
+Completed 200 OK in 202ms (Views: 199.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/members/" for 127.0.0.1 at 2018-05-06 10:25:09 -0400
+Processing by MembersController#index as HTML
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  ↳ app/views/members/index.html.erb:5
+  Rendered members/index.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (3 for 5..7)):
+    17: 
+    18: 	<div class="fixture-buttons">
+    19: 
+    20:   	<%= collection_radio_buttons(Member.all.order('name ASC'), :id, :name) %>
+    21: 	</div>
+    22: 	
+    23: 	<div class="filter-buttons">
+  
+app/views/members/index.html.erb:20:in `_app_views_members_index_html_erb___3013783007513763372_70307007422240'
+Started GET "/members/" for 127.0.0.1 at 2018-05-06 10:25:17 -0400
+Processing by MembersController#index as HTML
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  ↳ app/views/members/index.html.erb:5
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:20
+  Rendered members/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 32ms (Views: 30.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/members/" for 127.0.0.1 at 2018-05-06 10:26:17 -0400
+Processing by MembersController#index as HTML
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  ↳ app/views/members/index.html.erb:5
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:20
+  Rendered members/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/members/" for 127.0.0.1 at 2018-05-06 10:27:01 -0400
+Processing by MembersController#index as HTML
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  ↳ app/views/members/index.html.erb:5
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:20
+  Rendered members/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 20ms (Views: 18.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/members/?post%5Bmember_id%5D=&action=" for 127.0.0.1 at 2018-05-06 10:27:02 -0400
+Processing by MembersController#index as HTML
+  Parameters: {"post"=>{"member_id"=>""}}
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  ↳ app/views/members/index.html.erb:5
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:20
+  Rendered members/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/members/?post%5Bmember_id%5D=&action=" for 127.0.0.1 at 2018-05-06 10:27:33 -0400
+Processing by MembersController#index as HTML
+  Parameters: {"post"=>{"member_id"=>""}}
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  ↳ app/views/members/index.html.erb:5
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:20
+  Rendered members/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/members/?post%5Bmember_id%5D=&action=" for 127.0.0.1 at 2018-05-06 10:27:35 -0400
+Processing by MembersController#index as HTML
+  Parameters: {"post"=>{"member_id"=>""}}
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  ↳ app/views/members/index.html.erb:5
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:20
+  Rendered members/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 24ms (Views: 21.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/members/?post%5Bmember_id%5D=&post%5Bmember_id%5D=1&action=" for 127.0.0.1 at 2018-05-06 10:27:39 -0400
+Processing by MembersController#index as HTML
+  Parameters: {"post"=>{"member_id"=>"1"}}
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  ↳ app/views/members/index.html.erb:5
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:20
+  Rendered members/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/members/?post%5Bmember_id%5D=&post%5Bmember_id%5D=1&action=" for 127.0.0.1 at 2018-05-06 10:28:09 -0400
+Processing by MembersController#index as HTML
+  Parameters: {"post"=>{"member_id"=>"1"}}
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  ↳ app/views/members/index.html.erb:5
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:20
+  Rendered members/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/members/?get%5Bmember_id%5D=&get%5Bmember_id%5D=1&action=" for 127.0.0.1 at 2018-05-06 10:28:11 -0400
+Processing by MembersController#index as HTML
+  Parameters: {"get"=>{"member_id"=>"1"}}
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  ↳ app/views/members/index.html.erb:5
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:20
+  Rendered members/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/members/?get%5Bmember_id%5D=&get%5Bmember_id%5D=1&action=" for 127.0.0.1 at 2018-05-06 10:28:45 -0400
+Processing by MembersController#index as HTML
+  Parameters: {"get"=>{"member_id"=>"1"}}
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  ↳ app/views/members/index.html.erb:5
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:20
+  Rendered members/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 25ms (Views: 22.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/members/new" for 127.0.0.1 at 2018-05-06 10:28:58 -0400
+Processing by MembersController#new as HTML
+  Rendering members/new.html.erb within layouts/application
+  Rendered members/new.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 42ms (Views: 39.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/members" for 127.0.0.1 at 2018-05-06 10:29:09 -0400
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x5r/etp4eot0pSxoA8EG7Pjjw3tVeg2Zs5ixwSLqwpPqJSWlKWVH++gUHYzw90NMhVKCm+dO5RN5r82YLAQLKg==", "member"=>{"name"=>"Fake McDubbin"}, "commit"=>"Save Member"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/members_controller.rb:20
+  [1m[36mMember Create (0.4ms)[0m  [1m[32mINSERT INTO "members" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Fake McDubbin"], ["created_at", "2018-05-06 14:29:09.720780"], ["updated_at", "2018-05-06 14:29:09.720780"]]
+  ↳ app/controllers/members_controller.rb:20
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/members_controller.rb:20
+Redirected to http://localhost:3000/members/2
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/members/2" for 127.0.0.1 at 2018-05-06 10:29:09 -0400
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:4
+  [1m[36mCACHE Member Load (0.0ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:5
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 26ms (Views: 19.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/members" for 127.0.0.1 at 2018-05-06 10:29:14 -0400
+Processing by MembersController#index as HTML
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  ↳ app/views/members/index.html.erb:5
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:20
+  Rendered members/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 24ms (Views: 21.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/members" for 127.0.0.1 at 2018-05-06 10:30:07 -0400
+Processing by MembersController#index as HTML
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  ↳ app/views/members/index.html.erb:5
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:20
+  Rendered members/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 22ms (Views: 19.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/members" for 127.0.0.1 at 2018-05-06 10:30:40 -0400
+Processing by MembersController#index as HTML
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  ↳ app/views/members/index.html.erb:5
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:18
+  Rendered members/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 22ms (Views: 19.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/members" for 127.0.0.1 at 2018-05-06 10:30:48 -0400
+Processing by MembersController#index as HTML
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  ↳ app/views/members/index.html.erb:5
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:20
+  Rendered members/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/members" for 127.0.0.1 at 2018-05-06 10:31:11 -0400
+Processing by MembersController#index as HTML
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  ↳ app/views/members/index.html.erb:5
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:18
+  Rendered members/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 22ms (Views: 19.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/members" for 127.0.0.1 at 2018-05-06 10:31:37 -0400
+Processing by MembersController#index as HTML
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  ↳ app/views/members/index.html.erb:5
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:18
+  Rendered members/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/members" for 127.0.0.1 at 2018-05-06 10:32:11 -0400
+Processing by MembersController#index as HTML
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  ↳ app/views/members/index.html.erb:5
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:18
+  Rendered members/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 18.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/members" for 127.0.0.1 at 2018-05-06 10:32:22 -0400
+Processing by MembersController#index as HTML
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:5
+  Rendered members/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 21ms (Views: 18.7ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" ORDER BY "members"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" ORDER BY "members"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mTicket Load (0.1ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" ORDER BY "tickets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTicket Create (0.4ms)[0m  [1m[32mINSERT INTO "tickets" ("id", "number", "status", "url", "member_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["id", 1], ["number", 6300], ["status", "pending"], ["url", "www.google.com"], ["member_id", 1], ["created_at", "2018-05-06 14:39:21.933244"], ["updated_at", "2018-05-06 14:39:21.933244"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tickets"[0m
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" ORDER BY "tickets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT  "members".* FROM "members" ORDER BY "members"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."member_id" = ? LIMIT ?[0m  [["member_id", 1], ["LIMIT", 11]]
+  [1m[36mMember Load (0.7ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."member_id" = ? LIMIT ?[0m  [["member_id", 1], ["LIMIT", 11]]
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 11]]
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."member_id" = ? LIMIT ?[0m  [["member_id", 1], ["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/marcomanomat/.rvm/gems/ruby-2.2.4/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/marcomanomat/.rvm/gems/ruby-2.2.4/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/marcomanomat/.rvm/gems/ruby-2.2.4/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/marcomanomat/.rvm/gems/ruby-2.2.4/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/marcomanomat/.rvm/gems/ruby-2.2.4/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/marcomanomat/.rvm/gems/ruby-2.2.4/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateMembers (20180505230933)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "members" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180505230933_create_members.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180505230933"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateTickets (20180505231217)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "tickets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "number" integer, "status" text, "link" text, "url" text, "member_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_56af1c6c67"
+FOREIGN KEY ("member_id")
+  REFERENCES "members" ("id")
+)[0m
+  ↳ db/migrate/20180505231217_create_tickets.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_tickets_on_member_id" ON "tickets" ("member_id")[0m
+  ↳ db/migrate/20180505231217_create_tickets.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180505231217"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-06 14:46:37.041509"], ["updated_at", "2018-05-06 14:46:37.041509"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/members" for 127.0.0.1 at 2018-05-06 10:46:48 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/marcomanomat/.rvm/gems/ruby-2.2.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by MembersController#index as HTML
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:5
+  Rendered members/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 227ms (Views: 212.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/members/new" for 127.0.0.1 at 2018-05-06 10:46:56 -0400
+Processing by MembersController#new as HTML
+  Rendering members/new.html.erb within layouts/application
+  Rendered members/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 25ms (Views: 23.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/members" for 127.0.0.1 at 2018-05-06 10:47:03 -0400
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8+jxdPrkFJJRku+vqkcZ40hx6OmpiEFlTVdJtCwRy9zeVyurCfkp4s0j3ktZcVxDNcCpCRu8qe+HYDXtIv8CZQ==", "member"=>{"name"=>"Marco Manomat"}, "commit"=>"Save Member"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/members_controller.rb:20
+  [1m[36mMember Create (0.4ms)[0m  [1m[32mINSERT INTO "members" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Marco Manomat"], ["created_at", "2018-05-06 14:47:03.857339"], ["updated_at", "2018-05-06 14:47:03.857339"]]
+  ↳ app/controllers/members_controller.rb:20
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/members_controller.rb:20
+Redirected to http://localhost:3000/members/1
+Completed 302 Found in 9ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/members/1" for 127.0.0.1 at 2018-05-06 10:47:03 -0400
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:4
+  [1m[36mCACHE Member Load (0.0ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:5
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 18.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tickets/new" for 127.0.0.1 at 2018-05-06 10:47:14 -0400
+Processing by TicketsController#new as HTML
+  Rendering tickets/new.html.erb within layouts/application
+  Rendered tickets/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 43ms (Views: 41.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tickets" for 127.0.0.1 at 2018-05-06 10:47:50 -0400
+Processing by TicketsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Lt5O/+R5JQj9Bd5ZphlM+S5rtmNzUFZvmSslrqXIX5UDYZQgF2QYeGG0771VLwlZU9r3g8FkvuVTHFn3qyaWLA==", "ticket"=>{"number"=>"0001423", "status"=>"Pending", "url"=>"www.google.com"}, "commit"=>"Save Ticket"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tickets_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/tickets_controller.rb:15
+Redirected to http://localhost:3000/tickets
+Completed 302 Found in 32ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/tickets" for 127.0.0.1 at 2018-05-06 10:47:50 -0400
+Processing by TicketsController#index as HTML
+  Rendering tickets/index.html.erb within layouts/application
+  Rendered tickets/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 20.5ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mTicket Load (0.7ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/tickets" for 127.0.0.1 at 2018-05-06 10:50:50 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/marcomanomat/.rvm/gems/ruby-2.2.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by TicketsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Lt5O/+R5JQj9Bd5ZphlM+S5rtmNzUFZvmSslrqXIX5UDYZQgF2QYeGG0771VLwlZU9r3g8FkvuVTHFn3qyaWLA==", "ticket"=>{"number"=>"0001423", "status"=>"Pending", "url"=>"www.google.com"}, "commit"=>"Save Ticket"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tickets_controller.rb:15
+  [1m[36mTicket Create (0.5ms)[0m  [1m[32mINSERT INTO "tickets" ("number", "status", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["number", 1423], ["status", "Pending"], ["url", "www.google.com"], ["created_at", "2018-05-06 14:50:50.286342"], ["updated_at", "2018-05-06 14:50:50.286342"]]
+  ↳ app/controllers/tickets_controller.rb:15
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tickets_controller.rb:15
+Redirected to http://localhost:3000/tickets/1
+Completed 302 Found in 24ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/tickets/1" for 127.0.0.1 at 2018-05-06 10:50:50 -0400
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:4
+  Rendering tickets/show.html.erb within layouts/application
+  Rendered tickets/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 208ms (Views: 201.5ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mTicket Load (1.0ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "members"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMember Create (0.6ms)[0m  [1m[32mINSERT INTO "members" ("id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["id", 1], ["name", "Marco Manomat"], ["created_at", "2018-05-06 14:54:58.145370"], ["updated_at", "2018-05-06 14:54:58.145370"]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "members"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMember Create (0.7ms)[0m  [1m[32mINSERT INTO "members" ("id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["id", 1], ["name", "Marco Manomat"], ["created_at", "2018-05-06 14:55:10.069161"], ["updated_at", "2018-05-06 14:55:10.069161"]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTicket Create (0.6ms)[0m  [1m[32mINSERT INTO "tickets" ("id", "number", "status", "link", "url", "member_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 1], ["number", 6300], ["status", "pending"], ["link", "hi"], ["url", "www.google.com"], ["member_id", 1], ["created_at", "2018-05-06 14:55:37.577973"], ["updated_at", "2018-05-06 14:55:37.577973"]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTicket Create (0.7ms)[0m  [1m[32mINSERT INTO "tickets" ("id", "number", "status", "url", "member_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["id", 1], ["number", 6300], ["status", "pending"], ["url", "www.google.com"], ["member_id", 1], ["created_at", "2018-05-06 14:55:59.068531"], ["updated_at", "2018-05-06 14:55:59.068531"]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTicket Create (0.7ms)[0m  [1m[32mINSERT INTO "tickets" ("id", "number", "status", "url", "member_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["id", 1], ["number", 14234], ["status", "pending"], ["url", "www.google.com"], ["member_id", 1], ["created_at", "2018-05-06 14:56:08.868753"], ["updated_at", "2018-05-06 14:56:08.868753"]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTicket Create (0.5ms)[0m  [1m[32mINSERT INTO "tickets" ("id", "number", "status", "url", "member_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["id", 2], ["number", 14234], ["status", "pending"], ["url", "www.google.com"], ["member_id", 1], ["created_at", "2018-05-06 14:56:16.252625"], ["updated_at", "2018-05-06 14:56:16.252625"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tickets"[0m
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" ORDER BY "members"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."member_id" = ? LIMIT ?[0m  [["member_id", 1], ["LIMIT", 11]]
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."member_id" = ? ORDER BY "tickets"."id" ASC LIMIT ?[0m  [["member_id", 1], ["LIMIT", 1]]
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."member_id" = ? LIMIT ?[0m  [["member_id", 1], ["LIMIT", 11]]
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."member_id" = ? LIMIT ?[0m  [["member_id", 1], ["LIMIT", 11]]
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."member_id" = ? LIMIT ?[0m  [["member_id", 1], ["LIMIT", 11]]
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."member_id" = ? ORDER BY "tickets"."id" ASC LIMIT ?[0m  [["member_id", 1], ["LIMIT", 1]]
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."member_id" = ? ORDER BY "tickets"."id" ASC LIMIT ?[0m  [["member_id", 1], ["LIMIT", 1]]
+  [1m[36mMember Load (2.0ms)[0m  [1m[34mSELECT  "members".* FROM "members" ORDER BY "members"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT  "members".* FROM "members" ORDER BY "members"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."member_id" = ? LIMIT ?[0m  [["member_id", 1], ["LIMIT", 11]]

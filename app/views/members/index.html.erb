@@ -1,0 +1,22 @@
+<h1>Who are you?</h1>
+
+<p>
+  <strong>Team Members:</strong>
+  	<%= collection_select(:get, :member_id, @members.all.order('name ASC'), :id, :name) %>
+	</div>
+	
+	<div>
+		<button type="submit" name="action">Select</button>  
+	</div>
+
+</p>
+ 
+
+ <p>Not here? Click here to create</p>
+
+
+ 
+
+
+
+

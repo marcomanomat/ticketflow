@@ -5,9 +5,11 @@ one:
   status: MyText
   link: MyText
   url: MyText
+  member: one
 
 two:
   number: 1
   status: MyText
   link: MyText
   url: MyText
+  member: two

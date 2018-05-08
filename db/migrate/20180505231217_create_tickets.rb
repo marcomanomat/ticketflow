@@ -5,6 +5,7 @@ class CreateTickets < ActiveRecord::Migration[5.2]
       t.text :status
       t.text :link
       t.text :url
+      t.references :member, foreign_key: true
 
       t.timestamps
     end
