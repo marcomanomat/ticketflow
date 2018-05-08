@@ -1397,3 +1397,15 @@ Completed 200 OK in 208ms (Views: 201.5ms | ActiveRecord: 0.2ms)
   [1m[36mMember Load (2.0ms)[0m  [1m[34mSELECT  "members".* FROM "members" ORDER BY "members"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT  "members".* FROM "members" ORDER BY "members"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."member_id" = ? LIMIT ?[0m  [["member_id", 1], ["LIMIT", 11]]
+Started GET "/tickets/1" for 127.0.0.1 at 2018-05-08 18:19:02 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/marcomanomat/.rvm/gems/ruby-2.2.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:4
+  Rendering tickets/show.html.erb within layouts/application
+  Rendered tickets/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 238ms (Views: 209.2ms | ActiveRecord: 1.0ms)
+
+

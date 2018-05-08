@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  action: MyString
+  performed: false
+  notes: MyString
+  issue: one
+
+two:
+  action: MyString
+  performed: false
+  notes: MyString
+  issue: two
