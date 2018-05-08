@@ -10,12 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_05_231217) do
+ActiveRecord::Schema.define(version: 2018_05_08_223547) do
+
+  create_table "issues", force: :cascade do |t|
+    t.string "category"
+    t.integer "ticket_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ticket_id"], name: "index_issues_on_ticket_id"
+  end
 
   create_table "members", force: :cascade do |t|
     t.text "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string "action"
+    t.boolean "performed"
+    t.string "notes"
+    t.integer "issue_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["issue_id"], name: "index_tasks_on_issue_id"
   end
 
   create_table "tickets", force: :cascade do |t|
