@@ -1,1 +1,10 @@
-index.html.erb
+<% if @tickets.blank? %>
+  <h4>There are no tickets containing the term <%= params[:search] %>.</h4>
+<%else %>
+<h4> We found (<%=@tickets.count%>) tickets that matched the criteria: "<%=params[:search]%>"</h4>
+
+
+<h4> <% @tickets.each do |ticket| %> </h4>
+<br> <%= link_to "000#{ticket.number}", ticket%> - <%= ticket.member.name %> 
+	<% end %>
+<% end %>

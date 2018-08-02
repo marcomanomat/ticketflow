@@ -1,21 +1,22 @@
-<h1>Who are you?</h1>
+<h1>WELCOME</h1>
+<p>Support Org Ticket Workflow</p>
 
-<p>
-  <strong>Team Members:</strong>
-  	<%= collection_select(:get, :member_id, @members.all.order('name ASC'), :id, :name) %>
-	</div>
-	
-	<div>
-		<button type="submit" name="action">Select</button>  
-	</div>
+<br>
 
-</p>
- 
+<strong> Select a Member:
+<% @members.each do |member| %>
+<strong> <br><%= link_to "#{member.name}", member_path(member) %> 
+<% end %>
 
- <p>Not here? Click here to create</p>
+ <h5>Not here? Click here to create</h5>
 
 
- 
+<br>
+ <strong>Find a Ticket!
+<%= form_tag(tickets_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Tickets" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
 
 
 

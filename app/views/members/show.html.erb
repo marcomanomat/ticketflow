@@ -8,3 +8,16 @@
   <strong>Email:</strong>
   <%= @member.name.downcase.gsub(' ', '.') %>@braze.com
 </p>
+
+<p>///these are notes: create new ticket
+link_to {member.id} yea
+</p>
+
+
+
+<br>
+
+<br>All Tickets:
+<h4> <% @member.tickets.each do |ticket| %> </h4>
+<br> <%= link_to "000#{ticket.id}", ticket%>  
+<% end %>

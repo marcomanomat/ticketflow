@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  get 'members/index'
 
   resources :tickets
   resources :members
  
-  root 'welcome#index'
+  root 'members#index'
 end

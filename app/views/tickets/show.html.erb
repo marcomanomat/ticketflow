@@ -1,7 +1,7 @@
 
 <p>
   <strong>Ticket Number:</strong>
-  <%= @ticket.number %>
+  000<%= @ticket.number %>
 </p>
  
 <p>
@@ -13,3 +13,24 @@
   <strong>URL:</strong>
   <%= @ticket.url %>
 </p>
+
+<!-- click on the issues  -->
+<!-- hyperlink each issue (or check wcl for how i integrated checkboxes to select) -->
+
+<!-- list all issues manually, then if issue(clicked on) create an issue based on that issue selected. Ex) if "Push" is selected @ticket.issues.create(category: "Push") -->
+
+<!-- <p>
+  <strong>Issues:</strong>
+  <% @ticket.issues.each do |issue| %>
+  <br><%= issue.category%>
+  <% end %>
+</p>
+ -->
+
+<!--  <p>
+  <strong>Issues:</strong>
+  <% Issue.all.each do |issue| %>
+  <br><%= issue.category%>
+  <% end %>
+</p> -->
+

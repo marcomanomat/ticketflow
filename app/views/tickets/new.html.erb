@@ -21,3 +21,33 @@
     <%= form.submit %>
   </p>
 <% end %>
+
+
+
+<strong>Choose all that Apply:</strong>
+<br>(probably automatic:)
+<br>General Troubleshooting
+<br>Advance Troubleshooting
+
+<br>Email 
+<br>REST API
+<br>Push
+<br>IAM
+<br>UX/UI
+<br>Partner Integration
+<br>Deeplinks & Universal Linking
+<br>Currents
+
+
+
+Choosing and submitting will redirect them to Ticket.Issues#index
+
+<form action="/tickets" method="post">
+  <label>Number:</label><br>
+  <input type="text" name="ticket[number]"><br><br>
+  <label>Status:</label><br>
+  <textarea name="ticket[status]"></textarea><br>
+  <label>Add Tags:</label><br>
+  <input type="text" name="tags"><br>
+  <input type="submit" value="Create Post"><br>
+</form>

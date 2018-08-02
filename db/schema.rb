@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_08_223547) do
+ActiveRecord::Schema.define(version: 2018_06_19_001139) do
 
   create_table "issues", force: :cascade do |t|
     t.string "category"
@@ -20,10 +20,24 @@ ActiveRecord::Schema.define(version: 2018_05_08_223547) do
     t.index ["ticket_id"], name: "index_issues_on_ticket_id"
   end
 
+  create_table "issues_tasks", id: false, force: :cascade do |t|
+    t.integer "issue_id", null: false
+    t.integer "task_id", null: false
+  end
+
+  create_table "issues_tickets", id: false, force: :cascade do |t|
+    t.integer "ticket_id", null: false
+    t.integer "issue_id", null: false
+    t.index ["issue_id", "ticket_id"], name: "index_issues_tickets_on_issue_id_and_ticket_id"
+    t.index ["ticket_id", "issue_id"], name: "index_issues_tickets_on_ticket_id_and_issue_id"
+  end
+
   create_table "members", force: :cascade do |t|
     t.text "name"
+    t.text "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
   create_table "tasks", force: :cascade do |t|
