@@ -8,9 +8,11 @@
 <strong> <br><%= link_to "#{member.name}", member_path(member) %> 
 <% end %>
 
+<% if !logged_in? %>
  <h5><%= link_to "Not here? Click here to create", new_member_path %></h5>
+<% end %>
 
-
+<br>
 <br>
  <strong>Find a Ticket!
 <%= form_tag(tickets_path, :method => "get", id: "search-form") do %>
