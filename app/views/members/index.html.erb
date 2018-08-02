@@ -8,7 +8,7 @@
 <strong> <br><%= link_to "#{member.name}", member_path(member) %> 
 <% end %>
 
- <h5>Not here? Click here to create</h5>
+ <h5><%= link_to "Not here? Click here to create", new_member_path %></h5>
 
 
 <br>

@@ -17,8 +17,12 @@ class MembersController < ApplicationController
  def create
    @member = Member.new(member_params)
 
-   @member.save
+   if @member.save
    redirect_to @member
+   else
+      flash[:danger] = "Try Again!"
+      render 'new'
+    end
  end
  
  private
