@@ -18,7 +18,9 @@ class MembersController < ApplicationController
    @member = Member.new(member_params)
 
    if @member.save
-   redirect_to @member
+      log_in @member
+      flash[:success] = "Boom - Welcome to the Support Org Checklist App!"
+      redirect_to @member
    else
       flash[:danger] = "Try Again!"
       render 'new'
