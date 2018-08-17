@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  
 
   get 'members/index'
   get    '/login',   to: 'sessions#new'
